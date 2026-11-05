@@ -33,7 +33,7 @@
         .data-item-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; margin-bottom: 12px; }
         .data-label { font-size: 12px; font-weight: 700; color: #16a34a; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
         .data-value { font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 10px; word-break: break-word; }
-        .action-row { display: flex; gap: 8px; margin-top: 8px; }
+        .action-row { display: flex; gap: 8px; margin-top: 8px; position: relative; z-index: 2; }
         
         /* Tombol Sesuai Warna Hijau Muda */
         .btn-sesuai { background-color: #86efac; color: #14532d; border: 1px solid #4ade80; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 700; flex: 1; }
@@ -43,7 +43,7 @@
         .btn-koreksi { background-color: #f97316; color: white; border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; flex: 1; }
         .btn-koreksi:hover { background-color: #ea580c; }
 
-        .edit-container { display: none; margin-top: 12px; }
+        .edit-container { display: none; margin-top: 12px; position: relative; z-index: 3; background: #ffffff; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1; }
         .edit-input { width: 100%; padding: 9px 12px; font-size: 14px; border: 2px solid #bfdbfe; border-radius: 6px; margin-bottom: 8px; outline: none; }
         
         /* Tombol Kirim Perbaikan Warna Biru */
@@ -140,7 +140,7 @@
 </div>
 
 <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbzeWdobNcj3lPbuvohmTw5YCyXJzibXSez_tApSme8DGAroIMnHMvoI6rbi6b18w_-b/exec";
+    const API_URL = "https://script.google.com/macros/s/AKfycbzoOiXGjL1bTsxMrN7nZvDvPUqjK8Tm1gizx1liYJx3g7xnsZVPmB_5Nnl4_5d-T2Nh/exec";
     
     let currentSiswaNama = "";
     let currentSiswaNipd = "";
@@ -252,7 +252,7 @@
                     <div class="data-label">${row.label}</div>
                     <div class="data-value">${row.val}</div>
                     ${badgeHtml}
-                    <div class="action-row" style="margin-top: 10px;">
+                    <div class="action-row">
                         <button class="btn-sesuai" onclick="kirimData('${row.label}', 'Sesuai', ${index})">Sesuai</button>
                         <button class="btn-koreksi" onclick="bukaFormKoreksi(${index})">Koreksi</button>
                     </div>
